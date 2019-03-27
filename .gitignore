@@ -10,7 +10,7 @@ HELP.md
 .settings
 .springBeans
 .sts4-cache
-
+.mvn
 ### IntelliJ IDEA ###
 .idea
 *.iws
@@ -27,3 +27,7 @@ HELP.md
 
 ### VS Code ###
 .vscode/
+cloud-client/src/main/resources/static/
+cloud-client/src/main/resources/templates/
+src/main/resources/static/
+src/main/resources/templates/
