@@ -15,3 +15,17 @@ public class RibbonConfig {
         return new RestTemplate();
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
