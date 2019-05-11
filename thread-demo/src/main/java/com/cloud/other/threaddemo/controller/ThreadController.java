@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 @RequestMapping("/")
 @RestController
@@ -61,10 +62,13 @@ static {
         return returnList;
     }
     @RequestMapping("/thread1")
-    public String handlerList1() throws ExecutionException, InterruptedException {
-        System.out.println(taskExecutor.getActiveCount());
-        System.out.println(taskExecutor.getCorePoolSize());
-        System.out.println(taskExecutor.getKeepAliveSeconds());
+    public String handlerList1()  {
+        Future<String> submit = taskExecutor.submit(new Runnable() {
+            @Override
+            public String run() {
+                return "11";
+            }
+        });
         return  "11";
     }
 }
