@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * 配置feign   fallback位熔断器熔断后 处理失败的逻辑
  */
-@FeignClient(value = "cloud-client",configuration = FeignConfig.class,fallback = HiHystrix.class)
+@FeignClient(value = "cloud-client", configuration = FeignConfig.class, fallback = HiHystrix.class)
 public interface EurekaFeignService {
 
     @GetMapping(value = "/hi")
-    String sayHiFormClientEureka(@RequestParam(value = "name",defaultValue = "wyc")String name);
+    String sayHiFormClientEureka(@RequestParam(value = "name", defaultValue = "wyc") String name);
 }

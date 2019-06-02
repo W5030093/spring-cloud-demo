@@ -18,20 +18,22 @@ public class CloudController {
 
     @Autowired
     private RibbonService ribbonService;
+
     @RequestMapping("/hi")
 
-    public String hiSpringCloud(@RequestParam(value = "name",defaultValue = "wyc")String name){
+    public String hiSpringCloud(@RequestParam(value = "name", defaultValue = "wyc") String name) {
 
         System.out.println("你好");
         ribbonService.hi();
-        return "{name:"+name+"}";
+        return "{name:" + name + "}";
     }
+
     @RequestMapping("/testRibbon")
-    public String hiSpring(){
+    public String hiSpring() {
 
         ServiceInstance serviceInstance = loadBalancerClient.choose("cloud-client");
 
         System.out.println(serviceInstance.getPort());
-        return "{name:"+serviceInstance.getPort()+"}";
+        return "{name:" + serviceInstance.getPort() + "}";
     }
 }

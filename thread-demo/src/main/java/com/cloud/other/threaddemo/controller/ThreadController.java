@@ -19,12 +19,13 @@ import java.util.concurrent.Future;
 public class ThreadController {
 
     private static List<String> list;
-static {
-     list = new ArrayList<>();
-    for(int i=0;i<=10000000;i++){
-        list.add(i+"");
+
+    static {
+        list = new ArrayList<>();
+        for (int i = 0; i <= 10000000; i++) {
+            list.add(i + "");
+        }
     }
-}
 
     @Autowired
     private TaskExecutorDemoService1 taskExecutorDemoService1;
@@ -40,17 +41,18 @@ static {
 
         long time = System.currentTimeMillis();
         List<String> strings = /*changeAnother(list)*/taskExecutorDemoService1.handlerHaveReturn(list);
-        long i = System.currentTimeMillis()-time;
+        long i = System.currentTimeMillis() - time;
         System.out.println(i);
-        return i+"";
+        return i + "";
     }
-    public List<String> changeAnother(List<String> list){
+
+    public List<String> changeAnother(List<String> list) {
         List<String> returnList = new ArrayList<>();
-        if(!CollectionUtils.isEmpty(list)){
-            for(String s:list){
-                if(s.contains("3")){
-                    if(s.contains("6")){
-                        if(s.contains("7")){
+        if (!CollectionUtils.isEmpty(list)) {
+            for (String s : list) {
+                if (s.contains("3")) {
+                    if (s.contains("6")) {
+                        if (s.contains("7")) {
                             returnList.add(s);
                         }
 
@@ -61,14 +63,15 @@ static {
         }
         return returnList;
     }
+
     @RequestMapping("/thread1")
-    public String handlerList1()  {
+    public String handlerList1() {
         Future<String> submit = taskExecutor.submit(new Runnable() {
             @Override
             public String run() {
                 return "11";
             }
         });
-        return  "11";
+        return "11";
     }
 }

@@ -15,12 +15,13 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 public class FeignConfig {
 
     /**
-     *   持续时间   最大重试次数
+     * 持续时间   最大重试次数
+     *
      * @return
      */
     @Bean
-    public Retryer feignRetryer(){
+    public Retryer feignRetryer() {
 
-        return new Retryer.Default(100,SECONDS.toMillis(1),5);
+        return new Retryer.Default(100, SECONDS.toMillis(1), 5);
     }
 }

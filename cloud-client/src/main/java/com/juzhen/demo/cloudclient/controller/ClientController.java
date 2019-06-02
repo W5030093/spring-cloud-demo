@@ -18,12 +18,13 @@ public class ClientController {
 
     @Autowired
     private LoadBalancerClient loadBalancerClient;
+
     @RequestMapping("/hi")
     @ResponseBody
-    public String hiSpringCloud(@RequestParam(value = "name",defaultValue = "wyc")String name){
+    public String hiSpringCloud(@RequestParam(value = "name", defaultValue = "wyc") String name) {
 
         System.out.println(port);
-        return "{name:"+name+"}";
+        return "{name:" + name + "}";
     }
 
 

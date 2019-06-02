@@ -30,11 +30,11 @@ public class AliPayServiceImpl {
     public String do_pay() throws AlipayApiException {
 
         AlipayClient alipayClient = new DefaultAlipayClient(ALIPAY_GATEWAY
-                ,ALIPAY_APPID
-                ,ALIPAY_PRIVATEKEY
-                ,AlipayConstants.FORMAT_JSON
-                ,AlipayConstants.CHARSET_UTF8
-                ,ALIPAY_PUBLICKEY);
+                , ALIPAY_APPID
+                , ALIPAY_PRIVATEKEY
+                , AlipayConstants.FORMAT_JSON
+                , AlipayConstants.CHARSET_UTF8
+                , ALIPAY_PUBLICKEY);
         AlipayTradeWapPayRequest request = new AlipayTradeWapPayRequest();
         request.setNotifyUrl("http://www.wyczzzzz.cn:8080/park-system-job/jz");
         AlipayTradePagePayModel model = new AlipayTradePagePayModel();
@@ -45,6 +45,6 @@ public class AliPayServiceImpl {
         request.setBizModel(model);
         String body = alipayClient.pageExecute(request).getBody();
         System.out.println(body);
-        return  null;
+        return null;
     }
 }

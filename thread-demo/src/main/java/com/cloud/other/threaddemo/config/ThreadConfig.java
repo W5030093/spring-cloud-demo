@@ -11,7 +11,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 public class ThreadConfig {
 
     @Bean
-    public ThreadPoolTaskExecutor taskExecutor(){
+    public ThreadPoolTaskExecutor taskExecutor() {
         ThreadPoolTaskExecutor threadPool = new VisiableThreadPoolTaskExecutor();
         //设置核心线程数
         threadPool.setCorePoolSize(10);

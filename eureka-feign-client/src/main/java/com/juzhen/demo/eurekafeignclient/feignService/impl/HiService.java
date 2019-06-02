@@ -10,7 +10,7 @@ public class HiService {
     @Autowired
     private EurekaFeignService eurekaFeignService;
 
-    public String sayHi(String name){
+    public String sayHi(String name) {
         String s = eurekaFeignService.sayHiFormClientEureka(name);
         return s;
 

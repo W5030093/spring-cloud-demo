@@ -18,7 +18,7 @@ public class ServiceTurbineApplicationTests {
     @Test
     public void contextLoads() throws AlipayApiException {
 
-    aliPayService.do_pay();
+        aliPayService.do_pay();
     }
 
 }

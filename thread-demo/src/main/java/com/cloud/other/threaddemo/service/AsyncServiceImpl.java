@@ -20,13 +20,14 @@ public class AsyncServiceImpl {
         System.out.println("end executeAsync");
         return new AsyncResult<>(strings);
     }
-    public List<String> changeAnother(List<String> list){
+
+    public List<String> changeAnother(List<String> list) {
         List<String> returnList = new ArrayList<>();
-        if(!CollectionUtils.isEmpty(list)){
-            for(String s:list){
-                if(s.contains("3")){
-                    if(s.contains("6")){
-                        if(s.contains("7")){
+        if (!CollectionUtils.isEmpty(list)) {
+            for (String s : list) {
+                if (s.contains("3")) {
+                    if (s.contains("6")) {
+                        if (s.contains("7")) {
                             returnList.add(s);
                         }
                     }

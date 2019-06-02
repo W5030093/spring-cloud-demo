@@ -16,12 +16,12 @@ public class RibbonService {
 
     //启动熔断器
     @HystrixCommand(fallbackMethod = "hiError")
-    public String hi(){
-        String result = restTemplate.getForObject(Constant.RibbonService,String.class);
+    public String hi() {
+        String result = restTemplate.getForObject(Constant.RibbonService, String.class);
         return result;
     }
 
-    public String hiError(){
+    public String hiError() {
         System.out.println("error");
         return "hi,error";
     }

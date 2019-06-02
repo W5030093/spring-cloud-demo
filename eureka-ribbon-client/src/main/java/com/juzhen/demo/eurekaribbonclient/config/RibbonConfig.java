@@ -10,12 +10,11 @@ public class RibbonConfig {
 
 
     /**
-     *
      * @return
      */
     @Bean
     @LoadBalanced
-    RestTemplate restTemplate(){
+    RestTemplate restTemplate() {
         return new RestTemplate();
     }
 }

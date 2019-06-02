@@ -17,7 +17,7 @@ public class HiControllre {
 
     @HystrixCommand(fallbackMethod = "sayHiFormClientEureka")
     @RequestMapping("/hi")
-    public String hiEurekaFeign(@RequestParam String name){
+    public String hiEurekaFeign(@RequestParam String name) {
 
         String s = hiService.sayHi(name);
         return s;
