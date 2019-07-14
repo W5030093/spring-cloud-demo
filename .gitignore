@@ -24,6 +24,21 @@ HELP.md
 /nbdist/
 /.nb-gradle/
 /build/
-
+.mvn
 ### VS Code ###
 .vscode/
+cloud-daily/src/main/java/com/cloud/dauly/clouddaily/controller/
+eureka-ribbon-client/.mvn/
+eureka-ribbon-client/src/main/resources/static/
+eureka-ribbon-client/src/main/resources/templates/
+log/
+service-turbine/.mvn/
+service-turbine/src/main/java/com/juzhen/demo/serviceturbine/controller/
+service-turbine/src/main/resources/static/
+service-turbine/src/main/resources/templates/
+springFramework/word/~$docker.doc
+thread-demo/.mvn/
+thread-demo/src/main/java/com/cloud/other/threaddemo/constants/
+thread-demo/src/main/java/com/cloud/other/threaddemo/pay/
+thread-demo/src/main/resources/static/
+thread-demo/src/main/resources/templates/
