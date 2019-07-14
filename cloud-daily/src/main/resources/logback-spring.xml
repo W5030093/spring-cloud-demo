@@ -2,7 +2,9 @@
 <!DOCTYPE configuration>
 
 <configuration scan="true" scanPeriod="10 seconds">
-    <property name="log.dir" value="/data/logs" />
+    <!--配置常量-->
+    <property name="log.dir" value="/data/logs1" />
+    <property name="log.path" value="E:\\gitcloud\\log"></property>
     <jmxConfigurator/>
     <!--输出到控制台-->
     <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
@@ -187,7 +189,12 @@
     </logger>
 
 
-    <!--输出到文件-->
+    <!--输出到文件
+
+    　<file>：被写入的文件名，可以是相对目录，也可以是绝对目录，如果上级目录不存在会自动创建，没有默认值。
+　　  <append>：如果是 true，日志被追加到文件结尾，如果是 false，清空现存文件，默认是true。
+　　  <encoder>：对记录事件进行格式化。（具体参数稍后讲解 ）
+    -->
     <appender name="File" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>${log.path}/logback.%d{yyyy-MM-dd}.log</fileNamePattern>
@@ -197,22 +204,26 @@
         </encoder>
     </appender>
 
-    <appender name="Logstash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+   <!-- <appender name="Logstash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
         <destination>10.17.5.91:4560</destination>
         <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder" />
-    </appender>
+    </appender>-->
 
+    <!--设置root的打印级别-->
     <root level="info">
         <appender-ref ref="Console" />
         <appender-ref ref="File" />
     </root>
 
 
-    <!--logback.LogbackDemo：类的全路径 -->
+    <!--logback.LogbackDemo：类的全路径,将级别为“
+    DEBUG”及大于“DEBUG”的日志信息传递给root
+    additivity 为false 表示不会再往上级传递
+    -->
     <logger name="com.cloud" level="debug" additivity="false">
         <appender-ref ref="Console" />
         <appender-ref ref="File" />
-        <appender-ref  ref="Logstash"/>
+     <!--   <appender-ref  ref="Logstash"/>-->
     </logger>
 
 

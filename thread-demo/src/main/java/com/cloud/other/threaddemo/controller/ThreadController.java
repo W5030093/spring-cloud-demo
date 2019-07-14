@@ -66,12 +66,12 @@ public class ThreadController {
 
     @RequestMapping("/thread1")
     public String handlerList1() {
-        Future<String> submit = taskExecutor.submit(new Runnable() {
+        /*Future<String> submit = taskExecutor.submit(new Runnable() {
             @Override
             public String run() {
                 return "11";
             }
-        });
+        });*/
         return "11";
     }
 }

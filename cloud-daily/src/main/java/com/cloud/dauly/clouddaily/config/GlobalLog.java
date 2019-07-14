@@ -14,4 +14,5 @@ public class GlobalLog {
     public static Logger DB = LoggerFactory.getLogger("DB");
     public static Logger Status = LoggerFactory.getLogger("Status");
     public static Logger Cache = LoggerFactory.getLogger("Cache");
+
 }
